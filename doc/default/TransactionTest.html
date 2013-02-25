@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class TransactionTest</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class TransactionTest</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">test case.</p>
+		<p class="notes">
+			Located in <a class="field" href="_tests---TransactionTest.php.html">/tests/TransactionTest.php</a> (line <span class="field">11</span>)
+		</p>
+		
+				
+		<pre>PHPUnit_Framework_TestCase
+   |
+   --TransactionTest</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">TransactionTest</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setUp" title="details" class="method-name">setUp</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#tearDown" title="details" class="method-name">tearDown</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAnoCerto" title="details" class="method-name">testAnoCerto</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAnoExceptionMenor" title="details" class="method-name">testAnoExceptionMenor</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionSemFiliacao" title="details" class="method-name">testAutorizacaoExceptionSemFiliacao</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionSemNumCartao" title="details" class="method-name">testAutorizacaoExceptionSemNumCartao</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionSemNumPedido" title="details" class="method-name">testAutorizacaoExceptionSemNumPedido</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionSemParcelas" title="details" class="method-name">testAutorizacaoExceptionSemParcelas</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionSemPortador" title="details" class="method-name">testAutorizacaoExceptionSemPortador</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionSemTipoTransacao" title="details" class="method-name">testAutorizacaoExceptionSemTipoTransacao</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionSemTotal" title="details" class="method-name">testAutorizacaoExceptionSemTotal</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionSemValidade" title="details" class="method-name">testAutorizacaoExceptionSemValidade</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testAutorizacaoExceptionValidadeInvalida" title="details" class="method-name">testAutorizacaoExceptionValidadeInvalida</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testCVC2Certo" title="details" class="method-name">testCVC2Certo</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testCVC2Exception" title="details" class="method-name">testCVC2Exception</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testMesCerto" title="details" class="method-name">testMesCerto</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testMesExceptionMaior" title="details" class="method-name">testMesExceptionMaior</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testMesExceptionMenor" title="details" class="method-name">testMesExceptionMenor</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testNumCartaoCerto" title="details" class="method-name">testNumCartaoCerto</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testNumCartaoExceptionGrande" title="details" class="method-name">testNumCartaoExceptionGrande</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testNumCartaoExceptionVazio" title="details" class="method-name">testNumCartaoExceptionVazio</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testNumPedidoCerto" title="details" class="method-name">testNumPedidoCerto</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testNumPedidoExceptionGrande" title="details" class="method-name">testNumPedidoExceptionGrande</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testNumPedidoExceptionVazio" title="details" class="method-name">testNumPedidoExceptionVazio</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testParcelas" title="details" class="method-name">testParcelas</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testParcelasExceptionComTipoTransactionInvalida" title="details" class="method-name">testParcelasExceptionComTipoTransactionInvalida</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testParcelasExceptionSemTipoTransaction" title="details" class="method-name">testParcelasExceptionSemTipoTransaction</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testPortadorCerto" title="details" class="method-name">testPortadorCerto</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testPortadorExceptionMaior" title="details" class="method-name">testPortadorExceptionMaior</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testTipoTransacaoEquals" title="details" class="method-name">testTipoTransacaoEquals</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testTipoTransacaoValidas" title="details" class="method-name">testTipoTransacaoValidas</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testTotal" title="details" class="method-name">testTotal</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testTotalNegativoException" title="details" class="method-name">testTotalNegativoException</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#testTotalZeradoException" title="details" class="method-name">testTotalZeradoException</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">23</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">TransactionTest</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetUp" id="setUp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setUp</span> (line <span class="line-number">13</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setUp
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtearDown" id="tearDown"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">tearDown</span> (line <span class="line-number">18</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tearDown
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAnoCerto" id="testAnoCerto"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAnoCerto</span> (line <span class="line-number">222</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAnoCerto
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAnoExceptionMenor" id="testAnoExceptionMenor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAnoExceptionMenor</span> (line <span class="line-number">213</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAnoExceptionMenor
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionSemFiliacao" id="testAutorizacaoExceptionSemFiliacao"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionSemFiliacao</span> (line <span class="line-number">253</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionSemFiliacao
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionSemNumCartao" id="testAutorizacaoExceptionSemNumCartao"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionSemNumCartao</span> (line <span class="line-number">355</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionSemNumCartao
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionSemNumPedido" id="testAutorizacaoExceptionSemNumPedido"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionSemNumPedido</span> (line <span class="line-number">338</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionSemNumPedido
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionSemParcelas" id="testAutorizacaoExceptionSemParcelas"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionSemParcelas</span> (line <span class="line-number">321</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionSemParcelas
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionSemPortador" id="testAutorizacaoExceptionSemPortador"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionSemPortador</span> (line <span class="line-number">305</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionSemPortador
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionSemTipoTransacao" id="testAutorizacaoExceptionSemTipoTransacao"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionSemTipoTransacao</span> (line <span class="line-number">288</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionSemTipoTransacao
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionSemTotal" id="testAutorizacaoExceptionSemTotal"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionSemTotal</span> (line <span class="line-number">271</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionSemTotal
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionSemValidade" id="testAutorizacaoExceptionSemValidade"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionSemValidade</span> (line <span class="line-number">372</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionSemValidade
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestAutorizacaoExceptionValidadeInvalida" id="testAutorizacaoExceptionValidadeInvalida"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testAutorizacaoExceptionValidadeInvalida</span> (line <span class="line-number">388</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testAutorizacaoExceptionValidadeInvalida
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestCVC2Certo" id="testCVC2Certo"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testCVC2Certo</span> (line <span class="line-number">176</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testCVC2Certo
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestCVC2Exception" id="testCVC2Exception"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testCVC2Exception</span> (line <span class="line-number">167</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testCVC2Exception
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestMesCerto" id="testMesCerto"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testMesCerto</span> (line <span class="line-number">203</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testMesCerto
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestMesExceptionMaior" id="testMesExceptionMaior"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testMesExceptionMaior</span> (line <span class="line-number">194</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testMesExceptionMaior
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestMesExceptionMenor" id="testMesExceptionMenor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testMesExceptionMenor</span> (line <span class="line-number">185</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testMesExceptionMenor
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestNumCartaoCerto" id="testNumCartaoCerto"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testNumCartaoCerto</span> (line <span class="line-number">157</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testNumCartaoCerto
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestNumCartaoExceptionGrande" id="testNumCartaoExceptionGrande"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testNumCartaoExceptionGrande</span> (line <span class="line-number">148</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testNumCartaoExceptionGrande
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestNumCartaoExceptionVazio" id="testNumCartaoExceptionVazio"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testNumCartaoExceptionVazio</span> (line <span class="line-number">138</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testNumCartaoExceptionVazio
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestNumPedidoCerto" id="testNumPedidoCerto"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testNumPedidoCerto</span> (line <span class="line-number">128</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testNumPedidoCerto
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestNumPedidoExceptionGrande" id="testNumPedidoExceptionGrande"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testNumPedidoExceptionGrande</span> (line <span class="line-number">119</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testNumPedidoExceptionGrande
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestNumPedidoExceptionVazio" id="testNumPedidoExceptionVazio"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testNumPedidoExceptionVazio</span> (line <span class="line-number">109</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testNumPedidoExceptionVazio
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestParcelas" id="testParcelas"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testParcelas</span> (line <span class="line-number">98</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testParcelas
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestParcelasExceptionComTipoTransactionInvalida" id="testParcelasExceptionComTipoTransactionInvalida"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testParcelasExceptionComTipoTransactionInvalida</span> (line <span class="line-number">88</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testParcelasExceptionComTipoTransactionInvalida
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestParcelasExceptionSemTipoTransaction" id="testParcelasExceptionSemTipoTransaction"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testParcelasExceptionSemTipoTransaction</span> (line <span class="line-number">79</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testParcelasExceptionSemTipoTransaction
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestPortadorCerto" id="testPortadorCerto"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testPortadorCerto</span> (line <span class="line-number">243</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testPortadorCerto
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestPortadorExceptionMaior" id="testPortadorExceptionMaior"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testPortadorExceptionMaior</span> (line <span class="line-number">232</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testPortadorExceptionMaior
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestTipoTransacaoEquals" id="testTipoTransacaoEquals"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testTipoTransacaoEquals</span> (line <span class="line-number">69</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testTipoTransacaoEquals
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestTipoTransacaoValidas" id="testTipoTransacaoValidas"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testTipoTransacaoValidas</span> (line <span class="line-number">56</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testTipoTransacaoValidas
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestTotal" id="testTotal"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testTotal</span> (line <span class="line-number">46</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testTotal
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestTotalNegativoException" id="testTotalNegativoException"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">testTotalNegativoException</span> (line <span class="line-number">27</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testTotalNegativoException
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodtestTotalZeradoException" id="testTotalZeradoException"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">testTotalZeradoException</span> (line <span class="line-number">36</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			testTotalZeradoException
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 25 Feb 2013 17:47:53 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

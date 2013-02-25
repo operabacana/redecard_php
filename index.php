@@ -9,23 +9,42 @@
 
 <?php
 //imports
-require_once 'Redecard.php';
+require_once 'Transaction.php';
 
 // alias
-use \redecard_php\Redecard;
+use \redecard_php\Transaction;
 
 //execute
+$transacao = new Transaction();
+
 try{
 	
-	$redecard = new Redecard(34215468);
-	$transacao = $redecard->newTransaction();
-	$transacao -> setValor(20);
-	$transacao -> setTipoTransacao(04);
+	$transacao -> setConfTXN(1);
+	$transacao -> setPortador("Demetrius Feijoo Campos");	
+	$transacao -> setFiliacao("012121212121");
+	$transacao -> setTotal(0.01);
+	$transacao -> setTipoTransacao("04");
+	$transacao -> setParcelas("00");
+	$transacao -> setNumPedido("000000000");
+	$transacao -> setNumCartao("000000000");
+	$transacao -> setCVC2("201");
+	$transacao -> setMes("12");
+	$transacao -> setAno("2013");
 	
 }catch (InvalidArgumentException $e){
 
 	echo $e->getMessage();
 	
+}
+
+try{
+	
+	$transacao -> consultaAutorizacao();
+	
+}catch( BadMethodCallException $e ){
+
+	echo $e->getMessage();
+
 }
 
 ?>
