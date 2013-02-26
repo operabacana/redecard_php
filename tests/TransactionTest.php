@@ -388,7 +388,7 @@ class TransactionTest extends PHPUnit_Framework_TestCase {
 	public function testAutorizacaoExceptionValidadeInvalida(){
 	
 		$this -> setExpectedException('BadMethodCallException');
-	
+			
 		$transaction = new Transaction();
 		$transaction -> setFiliacao("012121212121");
 		$transaction -> setTotal(20.0);
@@ -402,6 +402,26 @@ class TransactionTest extends PHPUnit_Framework_TestCase {
 		$transaction -> consultaAutorizacao();
 	
 	}	
+	
+	public function testAutorizacaoExceptionRequisicaoSemProtocoloSeguro(){
+		
+	
+		$this -> setExpectedException('BadMethodCallException');
+
+		$transaction = new Transaction();
+		$transaction -> setFiliacao("012121212121");
+		$transaction -> setTotal(20.0);
+		$transaction -> setTipoTransacao("04");
+		$transaction -> setPortador("Demetrius Feijoo Campos");
+		$transaction -> setMes("12");
+		$transaction -> setAno(date('Y'));
+		$transaction -> setParcelas("00");
+		$transaction -> setNumPedido("000000000");
+		$transaction -> setNumCartao("000000000");
+		$transaction -> consultaAutorizacao();
+	
+	}
+		
 		
 }
 

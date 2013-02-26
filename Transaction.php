@@ -29,14 +29,15 @@ class Transaction {
 	private $pax = array();
 	private $confTXN;
 	private $addData;
+
+	CONST URL_AMBIENTE_PRODUCAO = "https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx/";
+	CONST URL_AMBIENTE_TESTE = "https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap_teste.asmx/";
 	
-	CONST URL_AUTORIZACAO_PRODUCAO = "https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx/GetAuthorized";
-	CONST URL_AUTORIZACAO_TESTE = "https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap_teste.asmx/GetAuthorizedTst";
+	CONST OPERACAO_AUTORIZACAO = "GetAuthorized";
 		
 	public function __construct(){
 		
 	}
-	
 	
 	/**
 	 * @return string
@@ -498,28 +499,46 @@ class Transaction {
 	}
 
 	/**
-	 * Verifica se todos os campos estao devidamente preenchidos. Caso estejam, realiza a consulta.
+	 * Verifica se todos os campos estao devidamente preenchidos. 
+	 * O endereço que faz a requisicao a esse metodo devera estar em HTTPS, caso contrario nao funcionara.
+	 * Caso tudo ocorra perfeitamente, um xml sera retornado. Caso nao ocorra sera retornado null. 
 	 *  
 	 * @throws \BadMethodCallException
+	 * @return \SimpleXMLElement
 	 */
 	public function consultaAutorizacao(){
 		
-		$eValida = $this -> validaAutorizacao();
-		
-		if($eValida){ 
 			
-			$ch = curl_init(self::URL_AUTORIZACAO_TESTE);
+ 		$eValida = $this -> validaAutorizacao();
+
+ 		$ambienteSeguro = $this->isAmbienteSeguro();
+ 		
+ 		if($ambienteSeguro){
+ 			
+ 			if($eValida){
+ 					
+ 				$ch = curl_init(self::URL_AMBIENTE_PRODUCAO.self::OPERACAO_AUTORIZACAO);
+ 			
+ 				curl_setopt( $ch , CURLOPT_POST , 1 );
+ 				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+ 				curl_setopt( $ch , CURLOPT_POSTFIELDS , $this -> montaQueryAutorizacao() );
+ 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+ 				 
+ 				$resposta = curl_exec($ch);
+ 				 
+ 				curl_close($ch);
+ 			
+ 				return simplexml_load_string($resposta);
+ 					
+ 			}
+ 				
+ 		}else{
+ 			
+ 			throw new \BadMethodCallException("A Url do script que invoca esse metodo precisa estar em protocolo seguro(HTTPS)!"); 			
+ 			
+ 		}
 			
-		    curl_setopt( $ch , CURLOPT_POST , 1 );
-		    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-		    curl_setopt( $ch , CURLOPT_POSTFIELDS , $this -> montaQueryAutorizacao() );
-		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		    
-		    $resposta = curl_exec($ch);
-		    
-			curl_close($ch);
-						
-		}
+ 		return null;
 		
 	}
 	
@@ -577,7 +596,7 @@ class Transaction {
 		
 		}else{
 			
-			return true;
+			return TRUE;
 			
 		}
 		
@@ -585,9 +604,11 @@ class Transaction {
 	
 	/**
 	 * Uma requisicao so pode ser feita para a Redecard utilizando protocolo seguro. 
-	 * 
+	 * @return boolean
 	 */
 	private function isAmbienteSeguro(){
+		
+		return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != "" && $_SERVER['HTTPS'] != "off";
 		
 	}
 	

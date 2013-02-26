@@ -31,15 +31,12 @@ try{
 	$transacao -> setMes("12");
 	$transacao -> setAno("2013");
 	
+	$retorno = $transacao -> consultaAutorizacao();	
+
+	
 }catch (InvalidArgumentException $e){
 
 	echo $e->getMessage();
-	
-}
-
-try{
-	
-	$transacao -> consultaAutorizacao();
 	
 }catch( BadMethodCallException $e ){
 
