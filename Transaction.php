@@ -29,14 +29,15 @@ class Transaction {
 	private $pax = array();
 	private $confTXN;
 	private $addData;
+
+	CONST URL_AMBIENTE_PRODUCAO = "https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx/";
+	CONST URL_AMBIENTE_TESTE = "https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap_teste.asmx/";
 	
-	CONST URL_AUTORIZACAO_PRODUCAO = "https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx/GetAuthorized";
-	CONST URL_AUTORIZACAO_TESTE = "https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap_teste.asmx/GetAuthorizedTst";
+	CONST OPERACAO_AUTORIZACAO = "GetAuthorized";
 		
 	public function __construct(){
 		
 	}
-	
 	
 	/**
 	 * @return string
@@ -251,9 +252,9 @@ class Transaction {
 	 */
 	public function setTotal( $total ){
 	
-		if( !is_double($total) || $total <= 0 ){
+		if( $total <= 0.0 ){
 	
-			throw new \InvalidArgumentException( sprintf("O parametro passado para o metodo %s devera ser um double e maior que zero. ", __METHOD__) );
+			throw new \InvalidArgumentException( sprintf("O parametro passado para o metodo %s devera ser um numero maior que zero. ", __METHOD__) );
 				
 		}
 	
@@ -289,7 +290,7 @@ class Transaction {
 	/**
 	 * Numero de parcelas da transacao.
 	 * Antes de colocar a quantidade de parcelas e preciso colocar um tipo de transacao.  
-	 * Esse metodo so pode receber vazio ou 00 quando o tipo de transacao for a vista, ou seja, tipo de transacao 04 ou 39.
+	 * Esse metodo so pode receber vazio ou 0 quando o tipo de transacao for a vista, ou seja, tipo de transacao 04 ou 39.
 	 * 
 	 * @param String $parcelas
 	 * @throws \RuntimeException
@@ -498,28 +499,46 @@ class Transaction {
 	}
 
 	/**
-	 * Verifica se todos os campos estao devidamente preenchidos. Caso estejam, realiza a consulta.
+	 * Verifica se todos os campos estao devidamente preenchidos. 
+	 * O endereço que faz a requisicao a esse metodo devera estar em HTTPS, caso contrario nao funcionara.
+	 * Caso tudo ocorra perfeitamente, um xml sera retornado. Caso nao ocorra sera retornado null. 
 	 *  
 	 * @throws \BadMethodCallException
+	 * @return \SimpleXMLElement
 	 */
 	public function consultaAutorizacao(){
 		
-		$eValida = $this -> validaAutorizacao();
-		
-		if($eValida){ 
 			
-			$ch = curl_init(self::URL_AUTORIZACAO_TESTE);
+ 		$eValida = $this -> validaAutorizacao();
+
+ 		$ambienteSeguro = $this->isAmbienteSeguro();
+ 		
+ 		if($ambienteSeguro){
+ 			
+ 			if($eValida){
+ 					
+ 				$ch = curl_init(self::URL_AMBIENTE_PRODUCAO.self::OPERACAO_AUTORIZACAO);
+ 			
+ 				curl_setopt( $ch , CURLOPT_POST , 1 );
+ 				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+ 				curl_setopt( $ch , CURLOPT_POSTFIELDS , $this -> montaQueryAutorizacao() );
+ 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+ 				 
+ 				$resposta = curl_exec($ch);
+ 				 
+ 				curl_close($ch);
+ 			
+ 				return simplexml_load_string($resposta);
+ 					
+ 			}
+ 				
+ 		}else{
+ 			
+ 			throw new \BadMethodCallException("A Url do script que invoca esse metodo precisa estar em protocolo seguro(HTTPS)!"); 			
+ 			
+ 		}
 			
-		    curl_setopt( $ch , CURLOPT_POST , 1 );
-		    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-		    curl_setopt( $ch , CURLOPT_POSTFIELDS , $this -> montaQueryAutorizacao() );
-		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		    
-		    $resposta = curl_exec($ch);
-		    
-			curl_close($ch);
-						
-		}
+ 		return null;
 		
 	}
 	
@@ -528,6 +547,8 @@ class Transaction {
 	
 		$formatoMsgError = "O metodo ".__METHOD__." nao pode ser chamado sem ter antes ter setado valores para os campos:  %s ";
 		$metodoTestado = "";
+		
+		$parcelas = $this -> getParcelas();
 		
 		if( $this -> getFiliacao() == "" ){
 		
@@ -547,7 +568,7 @@ class Transaction {
 		
 		}
 		
-		if( $this -> getParcelas() == "" ){
+		if(  empty($parcelas) &&  $this -> getTipoTransacao() != "04" &&  $this -> getTipoTransacao() != "39" ){
 		
 			$metodoTestado .= " 'parcelas' ";
 		
@@ -577,7 +598,7 @@ class Transaction {
 		
 		}else{
 			
-			return true;
+			return TRUE;
 			
 		}
 		
@@ -585,9 +606,11 @@ class Transaction {
 	
 	/**
 	 * Uma requisicao so pode ser feita para a Redecard utilizando protocolo seguro. 
-	 * 
+	 * @return boolean
 	 */
 	private function isAmbienteSeguro(){
+		
+		return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != "" && $_SERVER['HTTPS'] != "off";
 		
 	}
 	
@@ -605,11 +628,13 @@ class Transaction {
 		$arrayNumDoc = $this -> getNumDoc();
 		$arrayPax = $this -> getPax();
 
+		$parcelas = $this -> getParcelas();
+		
 		$arrayParametros = array();
 		$arrayParametros['FILIACAO'] = $this -> getFiliacao();
 		$arrayParametros['TOTAL'] = $this -> getTotal();
 		$arrayParametros['TRANSACAO'] = $this -> getTipoTransacao();
-		$arrayParametros['PARCELAS'] = $this -> getParcelas();
+		$arrayParametros['PARCELAS'] = empty($parcelas) ? "0" : $parcelas;
 		$arrayParametros['NUMPEDIDO'] = $this -> getNumPedido();
 		$arrayParametros['NRCARTAO'] = $this -> getNumCartao();
 		$arrayParametros['CVC2'] = $this -> getCVC2();
@@ -631,7 +656,8 @@ class Transaction {
 		$arrayParametros['PAX4'] = $arrayPax[3];
 		$arrayParametros['CONFTXN'] = $this -> getConfTXN();
 		$arrayParametros['AddData'] = $this -> getAddData();
-
+		$arrayParametros['Add_Data'] = $this -> getAddData();
+		
         $queryString = "";
 
         foreach( $arrayParametros as $ind => $valor ){
