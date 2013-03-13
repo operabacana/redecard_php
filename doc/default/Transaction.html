@@ -53,12 +53,17 @@
 			<div class="const-summary">
 								<div class="const-title">
 					<img src="../media/images/Constant.png" alt=" " />
-					<a href="#URL_AUTORIZACAO_PRODUCAO" title="details" class="const-name">URL_AUTORIZACAO_PRODUCAO</a> = 					<span class="var-type"> &quot;https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx/GetAuthorized&quot;</span>
+					<a href="#OPERACAO_AUTORIZACAO" title="details" class="const-name">OPERACAO_AUTORIZACAO</a> = 					<span class="var-type"> &quot;GetAuthorized&quot;</span>
 
 				</div>
 								<div class="const-title">
 					<img src="../media/images/Constant.png" alt=" " />
-					<a href="#URL_AUTORIZACAO_TESTE" title="details" class="const-name">URL_AUTORIZACAO_TESTE</a> = 					<span class="var-type"> &quot;https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap_teste.asmx/GetAuthorizedTst&quot;</span>
+					<a href="#URL_AMBIENTE_PRODUCAO" title="details" class="const-name">URL_AMBIENTE_PRODUCAO</a> = 					<span class="var-type"> &quot;https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx/&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#URL_AMBIENTE_TESTE" title="details" class="const-name">URL_AMBIENTE_TESTE</a> = 					<span class="var-type"> &quot;https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap_teste.asmx/&quot;</span>
 
 				</div>
 							</div>
@@ -84,7 +89,7 @@
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">\SimpleXMLElement</span>
 										<a href="#consultaAutorizacao" title="details" class="method-name">consultaAutorizacao</a>
 										()
 									</div>
@@ -310,7 +315,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">36</span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">38</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -333,18 +338,19 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">consultaAutorizacao</span> (line <span class="line-number">505</span>)
+		<span class="method-title">consultaAutorizacao</span> (line <span class="line-number">509</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Verifica se todos os campos estao devidamente preenchidos. Caso estejam, realiza a consulta.</p>
+<p class="short-description">Verifica se todos os campos estao devidamente preenchidos.</p>
+<p class="description"><p>O endereço que faz a requisicao a esse metodo devera estar em HTTPS, caso contrario nao funcionara.  Caso tudo ocorra perfeitamente, um xml sera retornado. Caso nao ocorra sera retornado null.</p></p>
 	<ul class="tags">
 				<li><span class="field">throws:</span> \BadMethodCallException</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">\SimpleXMLElement</span>
 		<span class="method-name">
 			consultaAutorizacao
 		</span>
@@ -358,7 +364,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getAddData</span> (line <span class="line-number">222</span>)
+		<span class="method-title">getAddData</span> (line <span class="line-number">223</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -381,7 +387,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getAno</span> (line <span class="line-number">132</span>)
+		<span class="method-title">getAno</span> (line <span class="line-number">133</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -404,7 +410,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getConcentrador</span> (line <span class="line-number">168</span>)
+		<span class="method-title">getConcentrador</span> (line <span class="line-number">169</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -427,7 +433,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getConfTXN</span> (line <span class="line-number">213</span>)
+		<span class="method-title">getConfTXN</span> (line <span class="line-number">214</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -450,7 +456,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getCVC2</span> (line <span class="line-number">114</span>)
+		<span class="method-title">getCVC2</span> (line <span class="line-number">115</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -473,7 +479,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getDistribuidor</span> (line <span class="line-number">159</span>)
+		<span class="method-title">getDistribuidor</span> (line <span class="line-number">160</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -496,7 +502,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getEntrada</span> (line <span class="line-number">186</span>)
+		<span class="method-title">getEntrada</span> (line <span class="line-number">187</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -519,7 +525,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getFiliacao</span> (line <span class="line-number">58</span>)
+		<span class="method-title">getFiliacao</span> (line <span class="line-number">59</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -542,7 +548,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getIata</span> (line <span class="line-number">150</span>)
+		<span class="method-title">getIata</span> (line <span class="line-number">151</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -565,7 +571,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getMes</span> (line <span class="line-number">123</span>)
+		<span class="method-title">getMes</span> (line <span class="line-number">124</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -588,7 +594,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getNumCartao</span> (line <span class="line-number">105</span>)
+		<span class="method-title">getNumCartao</span> (line <span class="line-number">106</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -611,7 +617,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getNumDoc</span> (line <span class="line-number">195</span>)
+		<span class="method-title">getNumDoc</span> (line <span class="line-number">196</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -634,7 +640,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getNumPedido</span> (line <span class="line-number">96</span>)
+		<span class="method-title">getNumPedido</span> (line <span class="line-number">97</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -657,7 +663,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getParcelas</span> (line <span class="line-number">87</span>)
+		<span class="method-title">getParcelas</span> (line <span class="line-number">88</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -680,7 +686,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getPax</span> (line <span class="line-number">204</span>)
+		<span class="method-title">getPax</span> (line <span class="line-number">205</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -703,7 +709,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getPortador</span> (line <span class="line-number">141</span>)
+		<span class="method-title">getPortador</span> (line <span class="line-number">142</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -726,7 +732,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getTaxaEmbarque</span> (line <span class="line-number">177</span>)
+		<span class="method-title">getTaxaEmbarque</span> (line <span class="line-number">178</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -749,7 +755,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getTipoTransacao</span> (line <span class="line-number">78</span>)
+		<span class="method-title">getTipoTransacao</span> (line <span class="line-number">79</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -772,7 +778,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getTotal</span> (line <span class="line-number">69</span>)
+		<span class="method-title">getTotal</span> (line <span class="line-number">70</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -795,7 +801,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setAddData</span> (line <span class="line-number">496</span>)
+		<span class="method-title">setAddData</span> (line <span class="line-number">497</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -823,7 +829,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setAno</span> (line <span class="line-number">407</span>)
+		<span class="method-title">setAno</span> (line <span class="line-number">408</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -854,7 +860,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setConcentrador</span> (line <span class="line-number">454</span>)
+		<span class="method-title">setConcentrador</span> (line <span class="line-number">455</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -882,7 +888,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setConfTXN</span> (line <span class="line-number">489</span>)
+		<span class="method-title">setConfTXN</span> (line <span class="line-number">490</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -910,7 +916,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setCVC2</span> (line <span class="line-number">366</span>)
+		<span class="method-title">setCVC2</span> (line <span class="line-number">367</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -941,7 +947,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setDistribuidor</span> (line <span class="line-number">447</span>)
+		<span class="method-title">setDistribuidor</span> (line <span class="line-number">448</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -969,7 +975,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setEntrada</span> (line <span class="line-number">468</span>)
+		<span class="method-title">setEntrada</span> (line <span class="line-number">469</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -997,7 +1003,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setFiliacao</span> (line <span class="line-number">234</span>)
+		<span class="method-title">setFiliacao</span> (line <span class="line-number">235</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1027,7 +1033,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setIata</span> (line <span class="line-number">440</span>)
+		<span class="method-title">setIata</span> (line <span class="line-number">441</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1055,7 +1061,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setMes</span> (line <span class="line-number">385</span>)
+		<span class="method-title">setMes</span> (line <span class="line-number">386</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1086,7 +1092,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setNumCartao</span> (line <span class="line-number">348</span>)
+		<span class="method-title">setNumCartao</span> (line <span class="line-number">349</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1117,7 +1123,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setNumDoc</span> (line <span class="line-number">475</span>)
+		<span class="method-title">setNumDoc</span> (line <span class="line-number">476</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1145,7 +1151,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setNumPedido</span> (line <span class="line-number">329</span>)
+		<span class="method-title">setNumPedido</span> (line <span class="line-number">330</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1176,7 +1182,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setParcelas</span> (line <span class="line-number">297</span>)
+		<span class="method-title">setParcelas</span> (line <span class="line-number">298</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1207,7 +1213,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setPax</span> (line <span class="line-number">482</span>)
+		<span class="method-title">setPax</span> (line <span class="line-number">483</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1235,7 +1241,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setPortador</span> (line <span class="line-number">426</span>)
+		<span class="method-title">setPortador</span> (line <span class="line-number">427</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1266,7 +1272,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setTaxaEmbarque</span> (line <span class="line-number">461</span>)
+		<span class="method-title">setTaxaEmbarque</span> (line <span class="line-number">462</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1294,7 +1300,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">setTipoTransacao</span> (line <span class="line-number">277</span>)
+		<span class="method-title">setTipoTransacao</span> (line <span class="line-number">278</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1325,7 +1331,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setTotal</span> (line <span class="line-number">252</span>)
+		<span class="method-title">setTotal</span> (line <span class="line-number">253</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1355,7 +1361,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">__clone</span> (line <span class="line-number">50</span>)
+		<span class="method-title">__clone</span> (line <span class="line-number">51</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1378,7 +1384,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">__toString</span> (line <span class="line-number">44</span>)
+		<span class="method-title">__toString</span> (line <span class="line-number">45</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1414,14 +1420,30 @@
 							
 					</div>
 		<div class="info-box-body">
-			<a name="constURL_AUTORIZACAO_PRODUCAO" id="URL_AUTORIZACAO_PRODUCAO"><!-- --></A>
+			<a name="constOPERACAO_AUTORIZACAO" id="OPERACAO_AUTORIZACAO"><!-- --></A>
 <div class="oddrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
 		<span class="const-title">
-			<span class="const-name">URL_AUTORIZACAO_PRODUCAO</span>
-			 = <span class="const-default"> &quot;https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx/GetAuthorized&quot;</span>
+			<span class="const-name">OPERACAO_AUTORIZACAO</span>
+			 = <span class="const-default"> &quot;GetAuthorized&quot;</span>
+			(line <span class="line-number">36</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constURL_AMBIENTE_PRODUCAO" id="URL_AMBIENTE_PRODUCAO"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">URL_AMBIENTE_PRODUCAO</span>
+			 = <span class="const-default"> &quot;https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap.asmx/&quot;</span>
 			(line <span class="line-number">33</span>)
 		</span>
 	</div>
@@ -1430,14 +1452,14 @@
 	
 	
 </div>
-<a name="constURL_AUTORIZACAO_TESTE" id="URL_AUTORIZACAO_TESTE"><!-- --></A>
-<div class="evenrow">
+<a name="constURL_AMBIENTE_TESTE" id="URL_AMBIENTE_TESTE"><!-- --></A>
+<div class="oddrow">
 
 	<div class="const-header">
 		<img src="../media/images/Variable.png" />
 		<span class="const-title">
-			<span class="const-name">URL_AUTORIZACAO_TESTE</span>
-			 = <span class="const-default"> &quot;https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap_teste.asmx/GetAuthorizedTst&quot;</span>
+			<span class="const-name">URL_AMBIENTE_TESTE</span>
+			 = <span class="const-default"> &quot;https://ecommerce.redecard.com.br/pos_virtual/wskomerci/cap_teste.asmx/&quot;</span>
 			(line <span class="line-number">34</span>)
 		</span>
 	</div>
@@ -1451,7 +1473,7 @@
 	</div>
 
 	<p class="notes" id="credit">
-		Documentation generated on Mon, 25 Feb 2013 17:47:53 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Tue, 26 Feb 2013 12:26:10 -0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>
